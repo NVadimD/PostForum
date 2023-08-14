@@ -1,0 +1,6 @@
+.removeIcon {
+    width: 20px;
+    height: 22.5px;
+    background-image: url(../../../../public/img/delete.svg);
+    background-size: cover;
+}
