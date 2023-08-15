@@ -1,21 +1,27 @@
 import React from 'react'
 import cl from './MyPost.module.css'
 import MyRemoveIcon from '../removeIcon/MyRemoveIcon'
+import MyOpenPostBtn from '../button/MyBtn'
 
-const MyPost = () => {
+const MyPost = ({post, remove, ...props}) => {
+
+    function removePost() {
+        remove(post);
+    }
+
     return (
         <div className={cl.post}>
             <div className={cl.post__content}>
                 <h6 className={cl.content__title}>
-                    JavaScript
+                    {props.number}. {post.title}
                 </h6>
                 <div className={cl.content__body}>
-                Discover a community of passionate individuals, engaging discussions, and endless knowledge sharing. Join us today and be part of the conversation!
+                    {post.body}
                 </div>
             </div>
             <div className={cl.post__buttonsArea}>
-                <MyRemoveIcon/>
-                <button className={cl.addPostButton}>Read</button>
+                <MyRemoveIcon onClick={removePost}/>
+                <MyOpenPostBtn>Read</MyOpenPostBtn>
             </div>
         </div>
     )

@@ -1,9 +1,9 @@
 import React from 'react'
 import cl from './MyRemoveIcon.module.css'
 
-const MyRemoveIcon = () => {
+const MyRemoveIcon = (props) => {
     return (
-        <div className={cl.removeIcon}>
+        <div className={cl.remove_icon} {...props}>
         
         </div>
     )

@@ -1,0 +1,27 @@
+.my_btn {
+    font-size: 10px;
+    font-weight: 600;
+
+    padding: 8px 18px;
+
+    background: #D5FF40;
+    border: 1px solid black;
+    border-radius: 6px;
+    opacity: 0.6;
+}
+
+.my_btn:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.my_btn:active {
+    opacity: 0.8;
+}
+
+
+.my_btn--large {
+    font-size: 18px;
+    margin: 8px 0;
+    opacity: 0.8;
+}
