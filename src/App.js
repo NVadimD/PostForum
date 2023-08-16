@@ -1,20 +1,21 @@
 import React, { useState } from "react";
 import './styles/App.css';
-import MyPost from "./components/UI/post/MyPost";
 import PostList from "./components/PostList";
 import PostForm from "./components/PostForm";
 import MyModal from "./components/UI/modal/MyModal";
+import PostFilter from "./components/PostFilter";
+import { usePosts } from "./hooks/usePosts";
 
 
 function App() {
 
     const [posts, setPosts] = useState([
-        {id: 1, title: 'JavaScript', body: 'Description of language'},
-        {id: 2, title: 'Python', body: 'Description of language'},
-        {id: 3, title: 'Go', body: 'Description of language'},
-        {id: 4, title: 'Java', body: 'Description of language'},
-        {id: 5, title: 'Rust', body: 'Description of language'},
-        {id: 6, title: 'C++', body: 'Description of language'},
+        {id: 1, title: 'JavaScript', body: '3 Description of language'},
+        {id: 2, title: 'Python', body: '2 Description of language'},
+        {id: 3, title: 'Go', body: '1 Description of language'},
+        {id: 4, title: 'Java', body: '4 Description of language'},
+        {id: 5, title: 'Rust', body: '6 Description of language'},
+        {id: 6, title: 'C++', body: '5 Description of language'},
     ])
 
     function addNewPost(post) {
@@ -29,6 +30,9 @@ function App() {
 
 
     const [modal, setModal] = useState(false);
+    
+    const [filter, setFilter] = useState({sort: 'Select an option'});
+    const sortedPosts = usePosts(posts, filter.sort);
 
 
 
@@ -39,7 +43,10 @@ function App() {
                 <PostForm add={addNewPost} setModalVisible={setModal}/>
             </MyModal>
 
-            <PostList posts={posts} remove={removePost}/>
+            <PostFilter filter={filter} setFilter={setFilter}/>
+
+            <PostList posts={sortedPosts} remove={removePost}/>
+
         </div>
     );
 }

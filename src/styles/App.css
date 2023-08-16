@@ -37,3 +37,17 @@
 .post_form {
     width: 100%;
 }
+
+.filter_box {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sort_box {
+    width: 30%;
+}
+
+.search_box {
+    width: 30%;
+}

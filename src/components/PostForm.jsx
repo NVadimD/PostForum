@@ -22,11 +22,13 @@ const PostForm = ({add, setModalVisible}) => {
                 value={post.title}
                 onChange={event => setPost({...post, title: event.target.value})}
                 placeholder='Title of post'
+                large
             />
             <MyInput
                 value={post.body}
                 onChange={event => setPost({...post, body: event.target.value})}
                 placeholder='Body of post'
+                large
             />
             <MyBtn large onClick={addPost}>Create post</MyBtn>
         </div>

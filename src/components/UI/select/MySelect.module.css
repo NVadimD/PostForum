@@ -1,0 +1,15 @@
+.mySelect {
+    width: 100%;
+
+    margin: 8px 0;
+    padding: 12px;
+    border: 1px solid rgb(83, 83, 83);
+    border-radius: 6px;
+
+    color: rgb(83, 83, 83);
+}
+
+.mySelect:focus {
+    outline: none;
+}
+

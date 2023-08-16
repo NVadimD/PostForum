@@ -1,0 +1,21 @@
+.not_found_display {
+    margin-top: 6%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+}
+
+.disp__help_line {
+    font-size: 30px;
+    color: #646464;
+    font-weight: 500;
+}
+
+.icon_box {
+    width: 80px;
+    height: 190px;
+    background-image: url('/public/img/not_found_ico.png');
+    background-size: contain;
+}
