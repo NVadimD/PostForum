@@ -18,13 +18,13 @@
 }
 
 .content__title {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 500;
     line-height: 1.6;
 }
 
 .content__body {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.4;
     color: #646464;
 }

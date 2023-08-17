@@ -5,6 +5,7 @@ import PostForm from "./components/PostForm";
 import MyModal from "./components/UI/modal/MyModal";
 import PostFilter from "./components/PostFilter";
 import { usePosts } from "./hooks/usePosts";
+import WelcomePart from "./components/UI/welcome/WelcomePart";
 
 
 function App() {
@@ -38,6 +39,8 @@ function App() {
 
     return (
         <div className="App">
+
+            <WelcomePart/>
 
             <MyModal visible={modal} setVisible={setModal}>
                 <PostForm add={addNewPost} setModalVisible={setModal}/>

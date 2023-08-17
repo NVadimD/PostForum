@@ -1,0 +1,18 @@
+.welcome_part__wrapper {
+    width: 100%;
+    padding: 20px 60px;
+    text-align: center;
+}
+
+.welcome_part__title {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.welcome_part__body {
+    color: #646464;
+    max-width: 660px;
+    margin: 0 auto;
+}

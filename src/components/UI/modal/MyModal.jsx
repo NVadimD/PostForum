@@ -7,7 +7,7 @@ const MyModal = ({ children, visible, setVisible }) => {
 
     return (
         <div>
-            <MyBtn large onClick={() => {setVisible(true)}}>Create new post</MyBtn>
+            <MyBtn large onClick={() => {setVisible(true)}}>+ Create new post</MyBtn>
             <div className={modalCl} onClick={() => setVisible(false)}>
                 <div className={cl.modal__content} onClick={event => event.stopPropagation()}>
                     {children}

@@ -4,15 +4,19 @@ import NotFoundDisp from './UI/notFoundDisp/NotFoundDisp'
 
 const PostList = ({posts, remove}) => {
     return (
-        posts.length
-        ?
-        <div className='post_list'>
-            {posts.map((post, ind) => 
-                <MyPost remove={remove} key={post.id} number={ind + 1} post={post}/>
-            )}
+        <div className='post_list__group'>           
+
+            {posts.length
+            ?
+            <div className='post_list'>
+                {posts.map((post, ind) =>
+                    <MyPost remove={remove} key={post.id} number={ind + 1} post={post}/>
+                )}
+            </div>
+            :
+            <NotFoundDisp/>}
+
         </div>
-        :
-        <NotFoundDisp/>
     )
 }
 

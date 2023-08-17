@@ -23,8 +23,12 @@
     justify-content: center;
 }
 
-.post_list {
+.post_list__group {
     width: 80%;
+}
+
+.post_list {
+    width: 100%;
 
     display: flex;
     flex-wrap: wrap;
