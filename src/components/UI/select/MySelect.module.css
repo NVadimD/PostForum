@@ -9,6 +9,10 @@
     color: rgb(83, 83, 83);
 }
 
+.mySelect:hover {
+    cursor: pointer;
+}
+
 .mySelect:focus {
     outline: none;
 }

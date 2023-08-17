@@ -4,7 +4,7 @@ import cl from './NotFoundDisp.module.css'
 const NotFoundDisp = () => {
     return (
         <div className={cl.not_found_display}>
-            <spun className={cl.disp__help_line}>Постов не найдено!</spun>
+            <spun className={cl.disp__help_line}>Posts not found</spun>
             <div className={cl.icon_box}></div>
         </div>
     )

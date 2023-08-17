@@ -42,12 +42,10 @@
     width: 80%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .sort_box {
     width: 30%;
 }
 
-.search_box {
-    width: 30%;
-}

@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import MySelect from './UI/select/MySelect'
-import MyInput from './UI/input/MyInput'
+import SearchBar from './UI/searchBar/SearchBar'
 
 const PostFilter = ({filter, setFilter}) => {
 
+    const [searchActive, setSearchActive] = useState(false);
+
     return (
         <div className='filter_box'>
+
             <div className='sort_box'>
                 <MySelect
                     defaultValue='Select an option'
@@ -17,9 +20,21 @@ const PostFilter = ({filter, setFilter}) => {
                     onChange={sort => setFilter({...filter, sort: sort})}
                 />
             </div>
-            <div className='search_box'>
-                <MyInput placeholder='Search...'/>
-            </div>
+
+            <SearchBar active={searchActive} setActive={setSearchActive} searchQuery={filter.searchQuery}>
+                {searchActive
+                    ?
+                        <input
+                            value={filter.searchQuery}
+                            onChange={event => setFilter({...filter, searchQuery: event.target.value})}
+                            placeholder='Search...'
+                            onClick={event => event.stopPropagation()}
+                        />
+                    :
+                        <div></div>
+                }
+                
+            </SearchBar>
         </div>
     )
 }

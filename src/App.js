@@ -31,8 +31,8 @@ function App() {
 
     const [modal, setModal] = useState(false);
     
-    const [filter, setFilter] = useState({sort: 'Select an option'});
-    const sortedPosts = usePosts(posts, filter.sort);
+    const [filter, setFilter] = useState({sort: 'Select an option', searchQuery: ''});
+    const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.searchQuery);
 
 
 
@@ -45,7 +45,7 @@ function App() {
 
             <PostFilter filter={filter} setFilter={setFilter}/>
 
-            <PostList posts={sortedPosts} remove={removePost}/>
+            <PostList posts={sortedAndSearchedPosts} remove={removePost}/>            
 
         </div>
     );

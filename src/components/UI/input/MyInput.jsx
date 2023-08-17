@@ -11,9 +11,7 @@ const MyInput = ({value, onChange, large, ...props}) => {
             onChange={onChange}
             className={clInput} 
             {...props}
-        >
-        
-        </input>
+        />        
     )
 }
 
