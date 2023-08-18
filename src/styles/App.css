@@ -54,7 +54,12 @@
 }
 
 
-
+.loadErr_title {
+    font-size: 32px;
+    font-weight: 600;
+    margin-top: 60px;
+    color: #F33278;
+}
 
 
 

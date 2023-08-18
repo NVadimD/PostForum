@@ -5,6 +5,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group'
 
 
 const PostList = ({posts, remove}) => {
+    
     return (
         <div className='post_list__group'>   
             {posts.length
