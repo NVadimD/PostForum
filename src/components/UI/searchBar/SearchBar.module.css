@@ -8,6 +8,8 @@
     cursor: pointer;
 
     position: relative;
+
+    transition: width 0.3s;
 }
 
 .search_box:hover {
@@ -38,12 +40,6 @@
     background-size: cover;
 }
 
-
-.search_box.active {
-    width: 30%;
-    background: #ffffff;
-}
-
 .search_box input {
     position: absolute;
     height: 100%;
@@ -58,3 +54,11 @@
 .search_box input:focus {
     outline: none;
 }
+
+
+
+.search_box.active {
+    width: 30%;
+    background: #ffffff;
+}
+

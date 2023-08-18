@@ -1,7 +1,7 @@
 import React from 'react'
 import cl from './MyPost.module.css'
 import MyRemoveIcon from '../removeIcon/MyRemoveIcon'
-import MyOpenPostBtn from '../button/MyBtn'
+import MyBtn from '../button/MyBtn'
 
 const MyPost = ({post, remove, ...props}) => {
 
@@ -21,7 +21,7 @@ const MyPost = ({post, remove, ...props}) => {
             </div>
             <div className={cl.post__buttonsArea}>
                 <MyRemoveIcon onClick={removePost}/>
-                <MyOpenPostBtn>Read</MyOpenPostBtn>
+                <MyBtn>Read</MyBtn>
             </div>
         </div>
     )
