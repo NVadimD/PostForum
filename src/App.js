@@ -8,15 +8,16 @@ function App() {
 
     return (
         <div className="App">
-
-            <MyHeader/>
-
             <BrowserRouter>
+
+                <MyHeader/>
+
                 <Routes>
                     <Route path="/posts" element={<Posts/>} />
                     <Route path="/about" element={<About/>} />
                     <Route path="*" element={<Navigate to = "posts"/>} />
                 </Routes>
+                
             </BrowserRouter>
 
         </div>
