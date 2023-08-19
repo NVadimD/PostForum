@@ -39,3 +39,19 @@
 .my_btn--page:hover {
     background: #FC6044;
 }
+
+
+.my_btn--exit {
+    background: #F33278;
+    color: #D5FF40;
+    opacity: 1;
+    border: none;
+    font-size: 18px;
+    padding: 8px 22px;
+}
+
+.my_btn--exit:hover {
+    color: black;
+    border: 1px solid black;
+    padding: 7px 21px;
+}
