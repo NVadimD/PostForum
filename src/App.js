@@ -9,6 +9,9 @@ import WelcomePart from "./components/UI/welcome/WelcomePart";
 import { PostService } from "./API/PostService";
 import { useFetching } from "./hooks/useFetching";
 import Loader from "./components/UI/loader/Loader";
+import { getPageCount } from "./utils/getPageCount";
+import { usePagination } from "./hooks/usePagination";
+import MyPagination from "./components/UI/pagination/MyPagination";
 
 
 function App() {
@@ -35,16 +38,26 @@ function App() {
     const [modal, setModal] = useState(false);    
     const [filter, setFilter] = useState({sort: 'Select an option', searchQuery: ''});
     const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.searchQuery);
+    
+    const [limit, setLimit] = useState(10);
+    const [curentPage, setCurentPage] = useState(1);
+    const [pagesCount, setPagesCount] = useState(0);
 
 
     const [fetchAllPosts, allPostsIsLoading, allPostsLoadingError] = useFetching(async() => {
-        const response = await PostService.getAllPosts();
-        setPosts(response);
+        const response = await PostService.getAllPosts(limit, curentPage);
+        setPosts(response.data);
+        const totalPostsCount = response.headers['x-total-count'];
+        const pagesCount = getPageCount(totalPostsCount, limit)
+        setPagesCount(pagesCount);
     })
+
 
     useEffect(() => {
         fetchAllPosts();
-    }, [])
+    }, [curentPage])
+
+    const pagesArray = usePagination(pagesCount);
 
 
 
@@ -68,6 +81,8 @@ function App() {
                 :
                     <PostList posts={sortedAndSearchedPosts} remove={removePost}/>            
             }
+
+            <MyPagination arr={pagesArray} setPage={setCurentPage}/>
 
         </div>
     );

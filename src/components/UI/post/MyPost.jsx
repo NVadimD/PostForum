@@ -13,7 +13,7 @@ const MyPost = ({post, remove, ...props}) => {
         <div className={cl.post}>
             <div className={cl.post__content}>
                 <h6 className={cl.content__title}>
-                    {props.number}. {post.title}
+                    {post.id}. {post.title}
                 </h6>
                 <div className={cl.content__body}>
                     {post.body}
