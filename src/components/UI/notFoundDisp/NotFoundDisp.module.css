@@ -1,5 +1,6 @@
 .not_found_display {
     margin-top: 6%;
+    margin-bottom: 48px;
 
     display: flex;
     flex-direction: column;

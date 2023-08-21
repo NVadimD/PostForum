@@ -1,12 +1,20 @@
 import React from 'react'
-import cl from './MyPost.module.css'
+import cl from './MyPostItem.module.css'
 import MyRemoveIcon from '../removeIcon/MyRemoveIcon'
 import MyBtn from '../button/MyBtn'
+import { useNavigate } from 'react-router-dom'
 
-const MyPost = ({post, remove, ...props}) => {
+
+const MyPostItem = ({post, remove, ...props}) => {
+
+    const router = useNavigate();
 
     function removePost() {
         remove(post);
+    }
+
+    async function openPostPage() {
+        router(`/posts/${post.id}`)
     }
 
     return (
@@ -21,10 +29,10 @@ const MyPost = ({post, remove, ...props}) => {
             </div>
             <div className={cl.post__buttonsArea}>
                 <MyRemoveIcon onClick={removePost}/>
-                <MyBtn>Read</MyBtn>
+                <MyBtn onClick={openPostPage}>Open</MyBtn>
             </div>
         </div>
     )
 }
 
-export default MyPost
+export default MyPostItem

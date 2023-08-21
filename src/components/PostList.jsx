@@ -1,7 +1,8 @@
 import React from 'react'
-import MyPost from './UI/post/MyPost'
+
 import NotFoundDisp from './UI/notFoundDisp/NotFoundDisp'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
+import MyPostItem from './UI/post-item/MyPostItem'
 
 
 const PostList = ({posts, remove}) => {
@@ -18,7 +19,7 @@ const PostList = ({posts, remove}) => {
                                 timeout={500}
                                 classNames="post"
                             >                        
-                                <MyPost remove={remove} number={ind + 1} post={post}/> 
+                                <MyPostItem remove={remove} number={ind + 1} post={post}/> 
                             </CSSTransition>                       
                         )}
                     </TransitionGroup>
