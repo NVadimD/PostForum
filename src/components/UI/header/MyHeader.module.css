@@ -5,7 +5,7 @@
     height: 80px;
     background: #BFE500;
 
-    display: flex;
+    display: none;
     justify-content: center;
     font-family: 'Inter', sans-serif;
 }
