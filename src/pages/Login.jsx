@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import '../styles/Login.css'
 import MyInput from '../components/UI/input/MyInput'
 import MyBtn from '../components/UI/button/MyBtn'
+import { AuthContext } from '../context'
 
 const Login = () => {
+
+    const {isAuth, setIsAuth} = useContext(AuthContext);
+
     return (
         <div className='login_page'>
             <div className="login_page__left_half">
