@@ -9,8 +9,14 @@ const MyHeader = () => {
     const location = useLocation();
     const currentPath = location.pathname;
 
-    const {isAuth, setIsAuth} = useContext(AuthContext);
+    const {isAuth, setIsAuth, userName, setUserName} = useContext(AuthContext);
 
+    function logout() {
+        setIsAuth(false);
+        setUserName('');
+        localStorage.setItem('auth', false);
+        localStorage.setItem('userName', '');
+    }
 
     return (
         <div className={cl.header__wrapper}>
@@ -34,10 +40,10 @@ const MyHeader = () => {
                                 </div>
                                 <div className={cl.user_section}>
                                     <div className={cl.user_section__name}>
-                                        @VaDuXXXa
+                                        {userName}
                                     </div>
                                     <div className="user_section__logout_btn">
-                                        <MyBtn exit>Log out</MyBtn>
+                                        <MyBtn exit onClick={logout}>Log out</MyBtn>
                                     </div>
                                 </div>
                             </div>              
