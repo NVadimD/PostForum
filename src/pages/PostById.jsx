@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { useFetching } from '../hooks/useFetching';
 import { PostService } from '../API/PostService';
+import '../styles/PostById.css'
 
 const PostById = () => {
 
@@ -26,18 +27,21 @@ const PostById = () => {
     }, [])
 
     return (
-        <div>
-            Post № {params.id} <br/><br/>
-            Title of post:<h2>{unfoldedPost.title}</h2><br/>
-            Content of post:<div>{unfoldedPost.body}</div><br/>
-            Comments:<br/>
-            {comments.map(comment =>
-                <div>
-                    <h6>{comment.email}:</h6>
-                    <div>{comment.body}</div><br/>
-                </div>    
-            )}
-            
+        <div className='foldedPost__wrapper'>
+            <div className="foldedPost_box">
+                <h2 className='foldedPost__title'>{params.id}. {unfoldedPost.title}</h2>
+                <div>{unfoldedPost.body}</div>
+                <div className='like_icon_box'></div>
+            </div>
+            <div className="comments_box">
+                <div className="commets_word">Comments <span className='comments_quantity'>{comments.length}</span></div>
+                {comments.map(comment =>
+                    <div>
+                        <div className='comment_email'>{comment.email}:</div>
+                        <div className='comment_body'>{comment.body}</div>
+                    </div>    
+                )}
+            </div>                    
         </div>
     )
 }
