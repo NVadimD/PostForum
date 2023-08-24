@@ -26,7 +26,7 @@ const PostList = ({posts, remove}) => {
                     
                 </div>                
             :
-                <NotFoundDisp/>}
+                <NotFoundDisp>Posts not found</NotFoundDisp>}
         </div>
     )
 }

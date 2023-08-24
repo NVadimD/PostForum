@@ -33,6 +33,9 @@ const MyHeader = () => {
                                         <li className={`${cl.li} ${currentPath === '/posts' ? cl.active : ''}`}>
                                             <Link to="/posts">Post</Link>
                                         </li>
+                                        <li className={`${cl.li} ${currentPath === '/selected' ? cl.active : ''}`}>
+                                            <Link to="/selected">Favorites</Link>
+                                        </li>
                                         <li className={`${cl.li} ${currentPath === '/about' ? cl.active : ''}`}>
                                             <Link to="/about">About</Link>
                                         </li>
