@@ -6,6 +6,7 @@ import '../styles/PostById.css'
 import Loader from '../components/UI/loader/Loader'
 import MyBtn from '../components/UI/button/MyBtn'
 import { useNavigate } from 'react-router-dom'
+import { CSSTransition, TransitionGroup } from 'react-transition-group'
 
 
 
@@ -47,27 +48,34 @@ const SelectedList = ({selectedPostsIdArr, setSelectedPostsIdArr}) => {
                         <Loader/>
                     :
                         <div className='foldedPost__wrapper'>
+                            <TransitionGroup className="transition-group">
                                 {selectedPosts.map(post =>
-                                    <div className="foldedPost_box" key={post.id}>
-                                        <h2 className='foldedPost__title'>{post.id}. {post.title}</h2>
-                                        <div>{post.body}</div>
-                                        <div className="post__buttonsArea">
-                                            <div className="like_group">
-                                                <div
-                                                    className='like_icon_box active'
-                                                    onClick={() => removeSelectedPost(post.id)}
-                                                >
-
+                                    <CSSTransition
+                                    key={post.id}
+                                    timeout={500}
+                                    classNames="foldedPost_box"
+                                    >   
+                                        <div className="foldedPost_box">
+                                            <h2 className='foldedPost__title'>{post.id}. {post.title}</h2>
+                                            <div>{post.body}</div>
+                                            <div className="post__buttonsArea">
+                                                <div className="like_group">
+                                                    <div
+                                                        className='like_icon_box active'
+                                                        onClick={() => removeSelectedPost(post.id)}
+                                                    >
+                                                        
+                                                    </div>
+                                                    <div className="like_word">Saved</div>
                                                 </div>
-                                                <div className="like_word">Saved</div>
+                                                <MyBtn onClick={() => router(`/posts/${post.id}`)}>Open</MyBtn>
                                             </div>
-                                            <MyBtn onClick={() => router(`/posts/${post.id}`)}>Open</MyBtn>
                                         </div>
-
-                                    </div>
+                                    </CSSTransition>
                                 )                                
                                 }
-                            </div>
+                            </TransitionGroup>
+                        </div>
             :
                 <div>
                     <NotFoundDisp>You don't have any favorite posts</NotFoundDisp>

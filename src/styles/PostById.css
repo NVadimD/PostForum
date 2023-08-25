@@ -89,3 +89,23 @@
     align-items: center;
     margin-top: 12px;
 }
+
+
+
+.foldedPost_box-enter {
+    opacity: 0;
+}
+
+.foldedPost_box-enter-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+}
+
+.foldedPost_box-exit {
+    opacity: 1;
+}
+
+.foldedPost_box-exit-active {
+    opacity: 0;
+    transition: opacity 500ms ease-in;
+}
