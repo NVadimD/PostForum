@@ -26,10 +26,11 @@ const SelectedList = ({selectedPostsIdArr, setSelectedPostsIdArr}) => {
 
     useEffect(() => {
         fetchSelectedPosts();
-    }, [selectedPostsIdArr])
+    }, [])
 
     function removeSelectedPost(id) {
-        setSelectedPostsIdArr(selectedPostsIdArr.filter(elem => elem !== id+''));
+        setSelectedPosts(selectedPosts.filter(post => post.id !== id));
+        setSelectedPostsIdArr(selectedPostsIdArr.filter(elem => elem !== id + '')); 
     }
 
     useMemo(() => {
