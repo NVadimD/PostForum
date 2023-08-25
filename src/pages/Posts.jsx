@@ -65,7 +65,10 @@ function Posts() {
     return (
         <div className="App">
 
-            <WelcomePart/>
+            <WelcomePart 
+                title='Welcome to our forum!'
+                subtitle='Discover a community of passionate individuals, engaging discussions, and endless knowledge sharing. Join us today and be part of the conversation!'
+            />
 
             <MyModal visible={modal} setVisible={setModal}>
                 <PostForm add={addNewPost} setModalVisible={setModal}/>

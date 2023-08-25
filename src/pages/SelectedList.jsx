@@ -7,6 +7,7 @@ import Loader from '../components/UI/loader/Loader'
 import MyBtn from '../components/UI/button/MyBtn'
 import { useNavigate } from 'react-router-dom'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
+import WelcomePart from '../components/UI/welcome/WelcomePart'
 
 
 
@@ -43,39 +44,45 @@ const SelectedList = ({selectedPostsIdArr, setSelectedPostsIdArr}) => {
     return (
         selectedPostsIdArr.length
             ?
-                postsIsLoading
-                    ?
-                        <Loader/>
-                    :
-                        <div className='foldedPost__wrapper'>
-                            <TransitionGroup className="transition-group">
-                                {selectedPosts.map(post =>
-                                    <CSSTransition
-                                    key={post.id}
-                                    timeout={500}
-                                    classNames="foldedPost_box"
-                                    >   
-                                        <div className="foldedPost_box">
-                                            <h2 className='foldedPost__title'>{post.id}. {post.title}</h2>
-                                            <div>{post.body}</div>
-                                            <div className="post__buttonsArea">
-                                                <div className="like_group">
-                                                    <div
-                                                        className='like_icon_box active'
-                                                        onClick={() => removeSelectedPost(post.id)}
-                                                    >
-                                                        
+                <div>
+                    <WelcomePart
+                        title='Your collection'
+                        subtitle='Here is your personal library with saved posts'
+                    />
+                    {postsIsLoading
+                        ?
+                            <Loader/>
+                        :
+                            <div className='foldedPost__wrapper'>
+                                <TransitionGroup className="transition-group">
+                                    {selectedPosts.map(post =>
+                                        <CSSTransition
+                                        key={post.id}
+                                        timeout={500}
+                                        classNames="foldedPost_box"
+                                        >   
+                                            <div className="foldedPost_box">
+                                                <h2 className='foldedPost__title'>{post.id}. {post.title}</h2>
+                                                <div>{post.body}</div>
+                                                <div className="post__buttonsArea">
+                                                    <div className="like_group">
+                                                        <div
+                                                            className='like_icon_box active'
+                                                            onClick={() => removeSelectedPost(post.id)}
+                                                        >
+                                                            
+                                                        </div>
+                                                        <div className="like_word">Saved</div>
                                                     </div>
-                                                    <div className="like_word">Saved</div>
+                                                    <MyBtn onClick={() => router(`/posts/${post.id}`)}>Open</MyBtn>
                                                 </div>
-                                                <MyBtn onClick={() => router(`/posts/${post.id}`)}>Open</MyBtn>
                                             </div>
-                                        </div>
-                                    </CSSTransition>
-                                )                                
-                                }
-                            </TransitionGroup>
-                        </div>
+                                        </CSSTransition>
+                                    )                                
+                                    }
+                                </TransitionGroup>
+                            </div>}
+                </div>
             :
                 <div>
                     <NotFoundDisp>You don't have any favorite posts</NotFoundDisp>

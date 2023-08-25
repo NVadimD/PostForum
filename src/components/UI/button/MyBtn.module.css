@@ -9,6 +9,7 @@
     border-radius: 6px;
     opacity: 0.6;
     height: max-content;
+    display: flex;
 }
 
 .my_btn:hover {
