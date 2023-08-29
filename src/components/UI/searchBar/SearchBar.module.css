@@ -62,3 +62,27 @@
     background: #ffffff;
 }
 
+
+@media (width < 1024px) {
+
+    .search_box.active {
+        width: 42%;
+    }
+
+}
+
+@media (width < 768px) {
+
+    .search_box__icon_box {
+        left: -1px;
+    }
+
+    .search_box input {
+        left: 48px;
+    }
+
+    .search_box.active {
+        width: 80%;
+    }
+
+}

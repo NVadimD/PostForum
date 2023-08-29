@@ -1,6 +1,7 @@
 .post {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 14px;
 
     width: 48%;
@@ -33,4 +34,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+@media (width < 768px) {
+
+    .post {
+        width: 100%;
+    }
 }

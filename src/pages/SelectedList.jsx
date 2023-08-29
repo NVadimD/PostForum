@@ -44,7 +44,7 @@ const SelectedList = ({selectedPostsIdArr, setSelectedPostsIdArr}) => {
     return (
         selectedPostsIdArr.length
             ?
-                <div>
+                <div className='selectedList__container'>
                     <WelcomePart
                         title='Your collection'
                         subtitle='Here is your personal library with saved posts'
@@ -61,7 +61,7 @@ const SelectedList = ({selectedPostsIdArr, setSelectedPostsIdArr}) => {
                                         timeout={500}
                                         classNames="foldedPost_box"
                                         >   
-                                            <div className="foldedPost_box">
+                                            <div className="foldedPost_box_list">
                                                 <h2 className='foldedPost__title'>{post.id}. {post.title}</h2>
                                                 <div className='foldedPost__body'>{post.body}</div>
                                                 <div className="post__buttonsArea">

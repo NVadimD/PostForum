@@ -24,8 +24,13 @@ const MyHeader = () => {
             ?
                 <div className={cl.header}>
                     <div className={cl.header__container}>
-                            <div className={cl.header__logo}>
+                            <div className={cl.logo_group}>
+                                <div className={cl.header__logo}>
 
+                                </div>
+                                <div className={cl.menu__logo}>
+
+                                </div>
                             </div>
                             <div className={cl.header__content}>
                                 <div className={cl.nav_bar}>
