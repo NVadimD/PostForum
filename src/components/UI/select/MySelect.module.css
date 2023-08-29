@@ -1,10 +1,15 @@
 .mySelect {
     width: 100%;
+    appearance: none;
 
     margin: 8px 0;
-    padding: 12px;
+    padding: 13px 8px;
     border: 1px solid rgb(83, 83, 83);
     border-radius: 6px;
+    background-image: url(../../../../public/img/arrow_ico.png);
+    background-repeat: no-repeat;
+    background-size: 3.5%;
+    background-position: right 8px center;
 
     color: rgb(83, 83, 83);
 }

@@ -13,7 +13,12 @@
 .foldedPost__title {
     font-style: 24px;
     font-weight: 500;
+    margin-bottom: 8px;
     text-transform: uppercase;
+}
+
+.foldedPost__body {
+    color: #646464;
 }
 
 .like_icon_box {
@@ -78,7 +83,7 @@
 
 .like_word {
     color: #F33278;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 500;
     margin-top: 12px;
 }

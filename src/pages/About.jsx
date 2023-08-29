@@ -4,6 +4,12 @@ import MyBtn from '../components/UI/button/MyBtn'
 import WelcomePart from "../components/UI/welcome/WelcomePart";
 
 const About = () => {
+
+    function goToTelegram() {
+        const telegramURL = 'https://t.me/NVadimD';
+        window.open(telegramURL, '_blank');
+    }
+
     return (
         <div className='about__container'>
             <WelcomePart
@@ -19,7 +25,7 @@ const About = () => {
                 </ul>
             </div>
             <div className="btn__box">
-                <MyBtn large>
+                <MyBtn large onClick={goToTelegram}>
                     @NVadimD
                     <div className='tg_ico'></div>
                 </MyBtn>

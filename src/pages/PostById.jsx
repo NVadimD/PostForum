@@ -49,7 +49,7 @@ const PostById = ({selectedPostsIdArr, setSelectedPostsIdArr}) => {
             <div className='foldedPost__wrapper'>
                 <div className="foldedPost_box">
                     <h2 className='foldedPost__title'>{params.id}. {unfoldedPost.title}</h2>
-                    <div>{unfoldedPost.body}</div>
+                    <div className='foldedPost__body'>{unfoldedPost.body}</div>
                     <div className={selectedPostsIdArr.includes(params.id) ? 'like_icon_box active' : 'like_icon_box'} onClick={addPostToSelectedList}></div>
                 </div>
                 <div className="comments_box">

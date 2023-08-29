@@ -63,7 +63,7 @@ const SelectedList = ({selectedPostsIdArr, setSelectedPostsIdArr}) => {
                                         >   
                                             <div className="foldedPost_box">
                                                 <h2 className='foldedPost__title'>{post.id}. {post.title}</h2>
-                                                <div>{post.body}</div>
+                                                <div className='foldedPost__body'>{post.body}</div>
                                                 <div className="post__buttonsArea">
                                                     <div className="like_group">
                                                         <div
