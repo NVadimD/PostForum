@@ -8,14 +8,14 @@
 .login_page__left_half {
     position: fixed;
     left: 0;
-    width: 50%;
+    width: 50vw;
     height: 100%;
     background: #BFE500;
 }
 
 .login_page__right_half {
     position: fixed;
-    width: 50%;
+    width: 50vw;
     height: 100%;
 }
 
@@ -66,8 +66,6 @@
 }
 
 
-
-
 .first_img {
     position: absolute;
     width: 190px;
@@ -88,4 +86,60 @@
 
     background-image: url('/public/img/login_bg2.png');
     background-size: contain;
+}
+
+
+
+
+@media (width < 1024px) {
+
+    .login_page__right_half {
+        background: #BFE500;
+        width: 70vw;
+    }
+
+    .login_desk {
+        position: absolute;
+        width: 360px;
+        height: 400px;
+        left: calc(50% - 180px);
+        top: calc(46% - 80px);
+
+        border-radius: 6%;
+    }
+
+    .first_img {
+        position: absolute;
+        width: 90px;
+        height: 200px;
+        left: 2px;
+        top: -220px;
+    
+        background-image: url('/public/img/header_ico.png');
+        background-size: cover;
+    }
+
+    .second_img {
+        position: absolute;
+        width: 210px;
+        height: 220px;
+        right: -22px;
+        top: -232px;
+    
+        background-image: url('/public/img/login_bg2.png');
+        background-size: contain;
+    }
+
+}
+
+@media (width < 400px) {
+    .login_desk {
+        position: absolute;
+        width: 360px;
+        height: 400px;
+        left: calc(50% - 170px);
+        top: calc(46% - 80px);
+
+        border-radius: 6%;
+    }
 }
