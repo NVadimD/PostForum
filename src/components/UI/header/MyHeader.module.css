@@ -89,8 +89,8 @@
 
 .menu__logo {
     display: none;
-    height: 44px;
-    width: 44px;
+    height: 38px;
+    width: 38px;
     background-image: url(../../../../public/img/menu_ico.png);
     background-size: cover;
 }
@@ -99,7 +99,21 @@
     display: flex;
     gap: 16px;
     align-items: center;
+    z-index: 10;
 }
+
+/* .close_ico {
+    display: none;
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    height: 24px;
+    width: 24px;
+
+    background-image: url(../../../../public/img/close_ico.png);
+    background-size: cover;
+
+} */
 
 
 
@@ -135,16 +149,17 @@
 @media (width < 768px) {
 
     .nav_bar {
-        /* display: none; */
+        display: none;
         position: fixed;
-        top: 80px;
+        top: 0;
         left: -46px;
-        width: 200px;
-        z-index: 5;
+        width: 102vw;
+
+        padding-top: 68px;
+        z-index: 15;
 
         height: 100vh;
         background: #BFE500;
-
     }
 
     .nav_bar ul {
@@ -167,4 +182,20 @@
         gap: 4px;
     }
 
+    .close_ico {
+        display: none;
+        position: absolute;
+        top: 30px;
+        right: 40px;
+        height: 28px;
+        width: 28px;
+    
+        background-image: url(../../../../public/img/close_ico.png);
+        background-size: cover;
+    
+    }
+
+    .active {
+        display: flex;
+    }
 }

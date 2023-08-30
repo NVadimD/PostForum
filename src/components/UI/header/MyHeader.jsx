@@ -6,6 +6,8 @@ import { AuthContext } from '../../../context';
 
 const MyHeader = () => {
 
+    const [visibleNav, setVisibleNav] = useState(false);
+
     const location = useLocation();
     const currentPath = location.pathname;
 
@@ -28,21 +30,24 @@ const MyHeader = () => {
                                 <div className={cl.header__logo}>
 
                                 </div>
-                                <div className={cl.menu__logo}>
+                                <div className={cl.menu__logo} onClick={() => setVisibleNav(true)}>
 
                                 </div>
                             </div>
                             <div className={cl.header__content}>
-                                <div className={cl.nav_bar}>
+                                <div className={`${cl.nav_bar} ${visibleNav ? cl.active : ''}`}>
+                                    <div className={`${cl.close_ico} ${visibleNav ? cl.active : ''}`} onClick={() => setVisibleNav(false)}>
+
+                                    </div>
                                     <ul>
                                         <li className={`${cl.li} ${currentPath === '/posts' ? cl.active : ''}`}>
-                                            <Link to="/posts">Post</Link>
+                                            <Link to="/posts" onClick={() => setVisibleNav(false)}>Post</Link>
                                         </li>
                                         <li className={`${cl.li} ${currentPath === '/selected' ? cl.active : ''}`}>
-                                            <Link to="/selected">Favorites</Link>
+                                            <Link to="/selected" onClick={() => setVisibleNav(false)}>Favorites</Link>
                                         </li>
                                         <li className={`${cl.li} ${currentPath === '/about' ? cl.active : ''}`}>
-                                            <Link to="/about">About</Link>
+                                            <Link to="/about" onClick={() => setVisibleNav(false)}>About</Link>
                                         </li>
                                     </ul>
                                 </div>
