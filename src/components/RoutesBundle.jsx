@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useMemo, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import {Navigate, Route, Routes } from "react-router-dom";
 import About from "../pages/About";
 import PostById from "../pages/PostById";
@@ -9,7 +9,7 @@ import SelectedList from '../pages/SelectedList';
 
 const RoutesBundle = () => {
 
-    const {isAuth, setIsAuth} = useContext(AuthContext);
+    const {isAuth} = useContext(AuthContext);
     const [selectedPostsIdArr, setSelectedPostsIdArr] = useState([]);
 
 
