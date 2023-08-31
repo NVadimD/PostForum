@@ -35,7 +35,7 @@ function App() {
                 setUserName
             }}>
 
-                <BrowserRouter>
+                <BrowserRouter basename={process.env.PUBLIC_URL}>
                     <MyHeader/>
                     <RoutesBundle/>
                 </BrowserRouter>
