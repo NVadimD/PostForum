@@ -25,11 +25,11 @@ const RoutesBundle = () => {
             {isAuth
                 ?
                     <Routes>
-                        <Route path="/posts" element={<Posts/>} />
+                        <Route path="/post_forum" element={<Posts/>} />
                         <Route path="/about" element={<About/>} />
                         <Route path="/selected" element={<SelectedList selectedPostsIdArr={selectedPostsIdArr} setSelectedPostsIdArr={setSelectedPostsIdArr}/>} />
                         <Route path="/posts/:id" element={<PostById selectedPostsIdArr={selectedPostsIdArr} setSelectedPostsIdArr={setSelectedPostsIdArr}/>} />
-                        <Route path="*" element={<Navigate to = "posts"/>} />
+                        <Route path="*" element={<Navigate to = "post_forum"/>} />
                     </Routes>
                 :
                     <Routes>
