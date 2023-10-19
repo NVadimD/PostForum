@@ -21,7 +21,7 @@ const MyPostItem = ({post, remove, ...props}) => {
         <div className={cl.post}>
             <div className={cl.post__content}>
                 <h6 className={cl.content__title}>
-                    {post.id}. {post.title}
+                    {props.number}. {post.title}
                 </h6>
                 <div className={cl.content__body}>
                     {post.body}
